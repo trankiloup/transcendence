@@ -1,0 +1,99 @@
+hmtl{ height: 100%}
+
+.neonPink {
+  border:none;
+  background-color: black;
+  color:white;
+  font-family: "neon";
+  text-shadow: 0 0 7px #e628ee, 0 0 10px #ce3f98, 0 0 42px rgb(181, 15, 236),
+  0 0 77px rgb(230, 18, 219), 0 0 100px rgb(230, 18, 226);
+  animation: neonFlickerPink 3s infinite;
+}
+
+.neonGreen
+{
+  text-align: center;
+  color: white;
+  font-family: "neon";
+  text-shadow: 0 0 7px #72f61f, 0 0 10px #72f61f, 0 0 12px rgb(114, 246, 31),
+  0 0 77px rgb(114, 246, 31), 0 0 100px rgb(114, 246, 31);
+  animation: neonFlickerGreen 5s infinite;
+}
+
+.neonBlue
+{
+  text-align: center;
+  color: white;
+  font-family: "neon";
+  text-shadow: 0 0 7px #1fe4f6, 0 0 10px #1fe4f6, 0 0 12px rgb(31, 228, 246),
+  0 0 77px rgb(31, 228, 246), 0 0 100px rgb(31, 228, 246);
+  animation: neonFlickerGreen 5s infinite;
+}
+.neonPinkSlow
+{
+  text-align: center;
+  color: #f8b8b8;
+  font-family: "neon";
+  text-shadow: 0 0 7px #e612db, 0 0 10px #e612e2, 0 0 12px rgb(181, 15, 236),
+  0 0 77px rgb(230, 40, 238), 0 0 100px rgb(253, 158, 218);
+  animation: neonFlickerPinkSlow 5s infinite;
+}
+
+.neonPinkSlowGame
+{
+  text-align: center;
+  color: #f8b8b8;
+  /* font-family: "neon"; */
+  text-shadow: 0 0 7px #e612db, 0 0 10px #e612e2, 0 0 12px rgb(181, 15, 236),
+  0 0 77px rgb(230, 40, 238), 0 0 100px rgb(253, 158, 218);
+  animation: neonFlickerPinkSlow 5s infinite;
+}
+
+.neonOrangeSlow
+{
+  text-align: center;
+  color: #ff6e24;
+  font-family: "neon";
+  text-shadow: 0 0 7px #ff3300, 0 0 10px #ff3300, 0 0 12px rgb(255, 51, 0),
+  0 0 77px rgb(255, 51, 0), 0 0 100px rgb(255, 51, 0);
+  animation: neonFlickerPinkSlow 5s infinite;
+}
+.card{
+  text-align: center;
+  border:none;
+  background-color: black;
+}
+@keyframes neonFlickerGreen{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes neonFlickerPinkSlow{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes neonFlickerPink{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

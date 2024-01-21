@@ -1,0 +1,62 @@
+<div class="top">
+  <div class="neonGreen" xmlns="http://www.w3.org/1999/html">
+    Edit your profile
+  </div>
+  <div class="neonGreen" style="font-size: 5vw ; margin: auto;cursor: pointer" (click)="back()">X</div>
+</div>
+<div class="container1">
+  <div class="empty"></div>
+    <div class="card bg-black singleCard">
+      <!-- AVATAR IMAGE -->
+      <div class="img">
+      <img
+        [src]="userAvatar"
+        class="img-thumbnail" alt="user_avatar"
+      >
+        </div>
+      <h1 class=" card-text username neonPinkSlow">{{currentUsername}}</h1>
+    </div>
+  <div class="form">
+    <div class="userNameForm ">
+      <!-- USERNAME FORM -->
+      <form [formGroup]="usernameForm" (ngSubmit)="onSubmitUsername()" class="input-group   align-items-center" >
+        <input
+          class="form-control bg-dark text-light"
+          style="color: deeppink;border:none; height:38px"
+          type="text"
+          placeholder="usermame"
+          formControlName="username">
+        <input
+          class="btn btn-dark"
+          type="submit"
+          style="color: deeppink;border:none; height:38px"
+          value="Apply">
+      </form>
+      <div class="error" [hidden]="!usernameError">
+        {{usernameErrorMessage}}
+      </div>
+    </div>
+    <div class="avatarForm ">
+      <!-- IMAGE FORM -->
+      <label class="custom-file-upload">
+        <input
+          class="btn btn-dark"
+          type="file"
+          style="color: deeppink;border:none;height:44px "
+          id="uploadAvatarButton"
+          accept="image/*"
+          (change)="onUploadImage($event)"
+        >
+      </label>
+      <button
+        type="button"
+        class="btn btn-dark"
+        style="color: deeppink;border:none;height:44px "
+        (click)="applyNewAvatar()"
+      >
+        Apply
+      </button>
+    </div>
+  </div>
+</div>
+

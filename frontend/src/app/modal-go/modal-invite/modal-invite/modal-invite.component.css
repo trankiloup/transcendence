@@ -1,0 +1,61 @@
+button{
+    color: white;
+    background-color: black;
+    border-color: #e612e2;
+  }
+  button:hover{
+    box-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 30px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+  .pinkSize{
+    font-size: 3vw;
+  }
+  .greenSize{
+    font-size: 2vw;
+  }
+  /* Modal Content/Box */
+  #myModal{
+    color:white;
+    background-color: black;
+    position: fixed;
+    left: 32.5%;
+    top: 30%;
+    width: 10%;
+    display: block;
+    margin: 0 auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #e628ee;
+    width: 40%; /* Could be more or less, depending on screen size */
+    z-index: 100;
+    animation-name: animatetop;
+    animation-duration: 2s
+  }
+  #myModal:hover{
+    box-shadow:
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 30px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+  /* The Close Button */
+  .close {
+    color: #e612e2;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover
+  {
+    color: #72f61f;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @keyframes animatetop {
+    from {top: -30%; opacity: 0}
+    to {top: 30%; opacity: 1}
+  }
+  

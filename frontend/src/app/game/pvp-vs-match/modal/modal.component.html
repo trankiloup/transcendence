@@ -1,0 +1,16 @@
+
+<!-- The Modal -->
+<div id="myModal" class="card">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close neonPinkSlow pinkSize" (click)="close()">&times;</span>
+    <p *ngIf=" !(isCreated )" class="neonGreen greenSize">Do You want to CREATE a PARTY !!!</p>
+    <p *ngIf="isCreated"class="neonGreen greenSize">Do You want to JOIN a PARTY !!!</p>
+    <button (click)="goGame()">
+      <span *ngIf=" !(isCreated )"class="neonPink pinkSize">CREATE</span>
+      <span *ngIf="isCreated" class="pinkSize neonPink">JOIN</span>
+    </button>
+  </div>
+
+</div>

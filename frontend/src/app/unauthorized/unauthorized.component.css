@@ -1,0 +1,32 @@
+.neonGreen
+{
+  text-align: center;
+  font-size: 150px;
+  color: white;
+  font-family: "neon";
+  text-shadow: 0 0 7px #72f61f, 0 0 10px #72f61f, 0 0 12px rgb(114, 246, 31),
+  0 0 77px rgb(114, 246, 31), 0 0 100px rgb(114, 246, 31);
+  animation: neonFlickerGreen 5s infinite;
+}
+
+@keyframes neonFlickerGreen{
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.text-description{
+    color: white;
+    font-size: 20px;
+}
+
+.margin{
+  padding-top: 5%;
+  
+}

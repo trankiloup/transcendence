@@ -1,0 +1,128 @@
+<body>
+    <div class="wrapper">
+        <nav class="menu">
+            <ul class="menu-left">
+                <li (click)="overview()" class="items">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                        <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                      </svg>
+                </li>
+                <li (click)="clickUserProfile()" class="items">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-person-gear" viewBox="0 0 16 16">
+                        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                      </svg>
+                </li>
+            </ul>
+            <ul class="menu-center neonGreen hpSize">
+                SUPER CHAT
+            </ul>
+            <ul class="menu-right">
+                <li class="items" (click)="openList()">
+                    <svg xmlns="http://www.w3.org/2000/svg"  class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                      </svg>
+                </li>
+                <li (click)="goMatchHistory()" class="items">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                </li>
+            </ul>
+       </nav> 
+       <div class="areas">
+        <div *ngIf="open">
+            <app-friends-list></app-friends-list>
+        </div>
+            <div class="conv-area">
+                <div class="card-body">
+                    <h3 class="card-text neonTitle">Conversations</h3>
+                </div>
+                <div class ="conv-list">
+                    <ul>
+                        <li *ngFor="let new of newChat$ | async" (click)="updateCurrentChatConv()">
+                            <p *ngIf="new == 0" class="name">Main Conversation</p>
+                            <p *ngIf="new == 1" class="name-active">Main Conversation</p>
+                        </li>
+                        <li *ngFor="let conv of convList$ | async" (click)="updateCurrentConv(conv)">
+                            <p *ngIf="!conv.new" class="name">{{conv.name}}</p>
+                            <p *ngIf="conv.new" class="name-active">{{conv.name}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-area">
+                    <div class="card-body"><h3 class="card-text neonTitle">{{currentConversation}}</h3></div>
+                    <div #chatcontainer class="chat-list">
+                        <div *ngIf="currentIdConv === -1">
+                        <ul *ngFor="let chat of chatList$ | async">
+                            <li class="me" *ngIf="chat.login !== login">
+                                <div class="name">
+                                    {{chat.username}}
+                                </div>
+                                <div class="message">
+                                    <p *ngIf="isBlocked(chat.login) == false" class="">{{chat.message}}</p>
+                                    <p *ngIf="isBlocked(chat.login) == true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="pink" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                      </svg></p>
+                                </div>
+                            </li>
+                            <li class="other" *ngIf="chat.login === login">
+                                <div class="name">
+                                    Moi
+                                </div> 
+                                <div class="message">
+                                    {{chat.message}}
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                        
+                        <div *ngIf="currentIdConv !== -1">
+                            <div *ngFor="let conv of convList$ | async">
+                            <ul *ngIf="conv.id == currentIdUser">
+                                <div *ngFor="let message of conv.conversations"> 
+                                <li class="me" *ngIf="message.id_auth != id">
+                                    <div class="name">
+                                        {{message.username_auth}}
+                                    </div>
+                                    <div class="message">
+                                        <p *ngIf="status !== relation.BLOCKED" class="">{{message.message}}</p>
+                                        <p *ngIf="status == relation.BLOCKED"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="pink" class="bi bi-x" viewBox="0 0 16 16">
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                          </svg></p>
+                                    </div>
+                                </li>
+                                <li class="other" *ngIf="message.id_auth == id" >
+                                    <div class="name">
+                                        Moi
+                                    </div> 
+                                    <div class="message">
+                                        {{message.message}}
+                                    </div>
+                                </li>
+                                </div>
+                            </ul>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="input-area" *ngIf="currentIdConv == -1 || status !== relation.BLOCKED">
+                        <form #f="ngForm" (ngSubmit)="onSubmitMessage(f)" novalidate>
+                        <input [(ngModel)]="msg" name="msg" class="input-wrapper col-8 justify-text-end" ngModel required="" #first="ngModel" placeholder="Ecrire ici..." autocomplete="off">
+                        <button class="button col-4 justify-content-end"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-send" viewBox="0 0 16 16">
+                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                          </svg></button>
+                        </form>
+                    </div>
+            </div>
+            <div class="users-area">
+                <div class="card-body"><h3 class="card-text neonTitle">Users</h3></div>
+                <div class="">
+                    <app-user-list-chat></app-user-list-chat>
+                </div> 
+            </div>
+       </div>
+
+    </div>
+</body>

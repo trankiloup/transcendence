@@ -1,0 +1,22 @@
+<div class="header">
+<app-header class="app"></app-header>
+<div class="neonPinkSlow back" (click)="back()">X</div>
+</div>
+<div class="container">
+  <div class="middle">
+    <p *ngIf="isClick"><app-modal></app-modal></p>
+    <div class="card" (click)="openModal()">
+      <div  class="card-body">
+        <img  class="card-img-top" src="../../../assets/pvp.png">
+      </div>
+      <p class="card-text neonPink">PvP</p>
+    </div>
+    <div class="pinkBorder"></div>
+    <div class="card" (click)="goToMatch()">
+      <div class="card-body">
+        <img  src="../../../assets/match.png">
+      </div>
+      <p class="card-text neonPink">Match</p>
+    </div>
+  </div>
+</div>

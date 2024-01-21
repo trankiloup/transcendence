@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="topProfil neonPinkSlow" >
+    <span>profil</span><span class="back" (click)="back()">X</span>
+  </div>
+  <div  class="neonPinkSlow Profil">
+    <div class="empty"></div>
+    <div class="img">
+    <img
+      [src]="avatar"
+      class="img-thumbnail" alt="user_avatar"
+    >
+    </div >
+    <div class="info neonBlue">
+      Login:&nbsp;{{login}} <br>User-name: &nbsp;{{name}}
+    </div>
+  </div>
+  <div class="neonPinkSlow scoreHistory">
+    SCORE-HISTORY
+    <div class="toggleContainer" *ngIf="isActive ==='pong'">
+      <div class="btn-group btn-group-lg" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check " name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-dark" for="btnradio1" (click)="changeTooglePvpToMatch('pvp')" style="font-size: 2vw">pvp</label>
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-dark" for="btnradio3"(click)="changeTooglePvpToMatch('match')"style="font-size: 2vw">match</label>
+      </div>
+    </div>
+  </div>
+  <div class="pongVSbrc">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item pong" >
+      <a class="nav-link neonPinkSlow"(click)="active('pong')" [ngClass]="{'active':isActive === 'pong'}">Pong</a>
+    </li>
+    <li class="nav-item brs">
+      <a class="nav-link neonPinkSlow"(click)="active('rps')"[ngClass]="{'active':isActive === 'rps'}" >BRS</a>
+    </li>
+  </ul>
+ </div>
+  <div class="pong " *ngIf="isActive ==='pong'">
+    <ul *ngIf=" tooglePvpTournament ==='pvp'" class="score ">
+      <li *ngFor="let match of playerMatchesPvp?.slice()?.reverse()" class="neonPinkSlow " style="font-size: 3vw">
+        <span class="neonGreen">{{match?.player_login}}</span> /vs/ <span class="neonBlue">{{ match?.opponent }}</span><span class="paddingLeft">Score:</span><span class="neonGreen"> {{match?.player_score}}</span>-<span class="neonBlue">{{ match?.opponent_score }}</span><span class="paddingLeft"> {{ match?.win ? 'Victoire' : 'Defaite' }}</span> <span class="paddingLeft">date: {{match?.created| date: 'dd/MM/yy  HH:mm'}}</span>
+      </li>
+    </ul>
+    <ul *ngIf=" tooglePvpTournament ==='match' " class="score">
+      <li *ngFor="let match of playerMatchesTournament?.slice()?.reverse()" class="neonPinkSlow" style="font-size: 2.5vw">
+        <span class="neonGreen">Victory:&nbsp; {{match?.player1_rank}}</span> <span class="paddingLeft"></span> <span class="neonBlue">Rank2:&nbsp;{{ match?.player2_rank }}</span>  <span class="paddingLeft"></span> <span class="neonGreen"> rank3:&nbsp;{{match?.player3_rank}}</span><span class="paddingLeft"> </span><span class="neonBlue">Rank4:&nbsp;{{ match?.player4_rank }}</span><span class="paddingLeft"> </span> <span >date:&nbsp; {{match?.created| date: 'dd/MM/yy  HH:mm'}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="pong  " *ngIf="isActive ==='rps'">
+    <ul class="score">
+      <li *ngFor="let match of playerMatchesRps?.slice()?.reverse()" class="neonPinkSlow " style="font-size: 3.5vw">
+        <span class="neonGreen">{{match?.player_login}}</span> /vs/ <span class="neonBlue">{{ match?.opponent }}</span><span class="paddingLeft">Score:</span><span class="neonGreen"> {{match?.player_score}}</span>-<span class="neonBlue">{{ match?.opponent_score }}</span><span class="paddingLeft"> {{ match?.win ? 'Victoire' : 'Defaite' }}</span> <span class="paddingLeft">date: {{match?.created| date: 'dd/MM/yy  HH:mm'}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

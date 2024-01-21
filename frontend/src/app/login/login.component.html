@@ -1,0 +1,9 @@
+<div class="white-text">
+        <div>
+            User login temporaire. On l'aura via OAuth
+        </div>
+        <form #f="ngForm" (ngSubmit)="onSubmitLogin(f)" novalidate>
+            <input name="login" ngModel required #first="ngModel">
+            <button>Submit</button>
+        </form>
+</div>

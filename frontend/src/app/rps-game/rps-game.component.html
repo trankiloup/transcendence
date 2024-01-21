@@ -1,0 +1,119 @@
+
+<div id= "wrapped" class ="wrapper">
+
+  <body>
+  <div class="top">
+    <div class="empty"></div>
+  <div class="neonGreen hpSize">
+    ROCK - BEER - CHEERS
+  </div>
+    <div class="empty"></div>
+  <div class="back neonPinkSlow hpSize" [hidden]="hideRegisterButton " (click)="back()" style="cursor: pointer">
+    X
+  </div>
+  </div>
+  <div class="neonGreen subTitle">
+    It's like rock, paper and scissors, but much better.
+  </div>
+  <div class="middle">
+    <div class="lBox">
+      <div class="neonBlue scoreSize">
+        {{leftname}}<br>{{leftScore}}
+        <!-- display card played -->
+        <div class="neonBlue leftBox">
+          <img *ngIf="displayResultCard && player1_card "
+               src="../../assets/{{ player1_card }}.png" alt="...">
+        </div>
+      </div>
+    </div>
+    <div class = "middleOther">
+      <div class = "middleOther" *ngIf="displayRules || !cardchoosen">
+        <div class="rulesText">
+          Here's how to play the game:<br>
+          Rock > Cheers<br>
+          Beer > Rock<br>
+          Cheers > Beer
+        </div>
+        <div class="button">
+          <button type="button" class="btn btn-dark" [hidden]="hideRegisterButton" (click)="clickButton()">
+            {{PlayButton}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rBox">
+      <div class="neonBlue scoreSize">
+        {{rightname}}<br>{{rightScore}}
+        <div class="neonBlue rightBox">
+          <img *ngIf="displayResultCard && player2_card"
+               src="../../assets/{{ player2_card }}.png" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- display winner or tie -->
+  <div *ngIf="displayResultCard" class="neonBlue scoreSize winner-score">
+    {{ResultText}}
+  </div>
+  <!-- Play button -->
+  <!-- Game rules -->
+
+  <!-- Game ready -->
+  <div *ngIf="displayselectcard">
+    <div *ngIf="!cardchoosen">
+      <!--
+                              <div class="rulesText">
+                                  Here's how to play the game:<br>
+                                  Rock > Cheers<br>
+                                  Beer > Rock<br>
+                                  Cheers > Beer<br>
+                              </div>
+      -->
+      <div class="rpsGameBox">
+        <p class="neonBlue">Select a card to play</p>
+      </div>
+      <div class="middle">
+        <div (click)= "playRock()" class="card bg-black singleCard">
+          <img src="../../assets/rock.png" class="card-img-top singleCardImg" alt="..." >
+          <div class="card-body">
+            <h1 class="card-text  neonPink nPinkSize">Rock</h1>
+          </div>
+        </div>
+        <div (click)="playBeer()" class="card  bg-black singleCard">
+          <img src="../../assets/beer.png" class="card-img-top singleCardImg" alt="...">
+          <div class="card-body">
+            <h1 class="card-text  neonPink nPinkSize">Beer</h1>
+          </div>
+        </div>
+        <div (click)="playCheers()" class="card bg-black singleCard">
+          <img src="../../assets/cheers.png" class="card-img-top singleCardImg" alt="...">
+          <div class="card-body">
+            <h1 class="card-text  neonPink nPinkSize" >Cheers</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- display choosen card -->
+    <div *ngIf="cardchoosen">
+      <div class="rpsGameBox">
+        <p class="neonBlue">You choose :</p>
+      </div>
+      <div class="middle">
+        <div class="card bg-black singleCard">
+          <img src="../../assets/{{selectedCard}}.png" class="card-img-top singleCardImg" alt="..." >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- diplay final winner -->
+  <div *ngIf="displayMatchResult" class="rps-game" >
+    <!-- <div class="Resulttext">
+        And The Winner Of This Match Is {{ winner }} <br>
+    </div> -->
+    <div class="neonBlue scoreSize">
+      {{ winnerScore }} : {{ loserScore }}
+    </div>
+  </div>
+  </body>
+</div>

@@ -1,0 +1,34 @@
+    <body>
+      <div id= "wrapped" class ="wrapper">
+        <div class="neonGreen titlesize" >Authentification
+        </div>
+        <div class="center">
+          <button *ngIf="send == 0" class="neonPink titlesize" (click)="sendEmail()" >Send Email</button>
+          <div *ngIf="send == 2" class="neonPinkWithoutAnim titlesize">Code Error</div>
+          <button *ngIf="send == 2" class="neonPink titlesize" (click)="sendEmail()" >Forward Email</button>
+
+        <div *ngIf="send == -1" class="neonWhite titlesize2">Activate 2FA Security?</div>
+        <div class="flexBut">
+        <button *ngIf="send == -1" class="neonPink titlesize" (click)="activateSecurity()" >YES</button>
+        <button *ngIf="send == -1" class="neonBlueAction titlesize" (click)="desactivateSecurity()" >NO</button>
+        </div>
+          <form #myForm="ngForm" (ngSubmit)="submitForm()">
+            <div class="code" *ngIf="send == 1">
+                    <div class="code">
+                        <input type="text" id="digit1" name="digit1" [(ngModel)]="digit1" maxlength="1" pattern="[0-9]" autocomplete="off" required (input)="checkValidity(1, $event)">
+                        <input type="text" id="digit2" name="digit2" [(ngModel)]="digit2" maxlength="1" pattern="[0-9]" autocomplete="off" required (input)="checkValidity(2, $event)">
+                        <input type="text" id="digit3" name="digit3" [(ngModel)]="digit3" maxlength="1" pattern="[0-9]" autocomplete="off" required (input)="checkValidity(3, $event)">
+                        <input type="text" id="digit4" name="digit4" [(ngModel)]="digit4" maxlength="1" pattern="[0-9]" autocomplete="off" required (input)="checkValidity(4, $event)">  
+                    </div>
+                    <button class="button" type="submit" [ngClass]="{'valid-button': myForm.valid}" [disabled]="!myForm.valid"><picture class="padlock">
+                        <img src="assets/padlock.png">
+                    </picture>
+                    </button>  
+                    </div>
+                </form>
+                <picture class="padlock" *ngIf="send == 0 || send == -1">
+                    <img src="assets/padlock.png">
+                </picture>
+            </div>
+        </div>
+    </body>

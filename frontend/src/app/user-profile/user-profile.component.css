@@ -1,0 +1,92 @@
+.container1 {
+  margin:auto;
+  width: 98vh;
+  display: flex;
+  justify-content: left;
+  background-color: black;
+  border: 2px solid #082cf7;
+  padding: 70px;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgba(8,44,247, 0.8), 0 0 200px rgba(8,44,247, 0.5), 0 0 300px rgba(8,44,247, 0.3);
+}
+
+.top{
+  padding-left: 20%;
+  display: flex;
+  justify-content:center ;
+  padding-bottom: 10%;
+}
+.formcontrol{
+  border-radius: 10px;
+  border : 3px solid ;
+  border-color: #72f61f;
+}
+.form{
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.singleCard{
+  margin: auto;
+  min-height: 30vh;
+  background-color: black;
+}
+h1{
+  border-radius: 5px;
+}
+
+.card-body, h1{
+  background-color: black;
+}
+button{
+  border-radius: 0 10% 10% 0;
+  height:44px;
+}
+#uploadAvatarButton{
+  border-radius: 5px 0% 0 5px;
+}
+.img{
+  margin:auto;
+}
+img,h1{
+  box-shadow: 0 0 100px rgba(8,44,247, 0.8), 0 0 200px rgba(8,44,247, 0.5), 0 0 300px rgba(8,44,247, 0.3);
+  border: none;
+  max-width: 20vh;
+  background-color: black;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: deeppink;
+  opacity: 1; /* Firefox */
+}
+.empty{
+  min-height:30vh;
+}
+.neonGreen
+{
+  text-align: center;
+  font-size: 8vw;
+}
+input::file-selector-button {
+  color:deeppink;
+  border: thin solid grey;
+  border-color: #e612e2;
+  background-color: #212529;
+  border-radius: 3px;
+}
+.error{
+  color: rgb(173, 12, 12);
+  margin-top: 8px;
+}
+ button{
+  color:deeppink ;
+  background-color: #212529;
+}
+
+.username
+{
+  font-size: 30px;
+  margin-top: 5px;
+  color:rgb(0, 0, 0)
+}

@@ -1,0 +1,30 @@
+<div class="neonGreen hpSize">
+  HAPPY-HOUR
+</div>
+<body>
+    <div id= "wrapped" class ="wrapper">
+        <div class="score">
+          <div class="neonBlue scoreSize">
+            {{leftname}}<br>{{leftScore}}
+          </div>
+          <div class="start">
+            <app-countdown></app-countdown>
+            <!-- <div class="start" (click)="startGame()"><img src="assets/play.png"> </div> -->
+          </div>
+          <div class="neonBlue scoreSize">
+            {{rightname}}<br>{{rightScore}}
+          </div>
+        </div>
+      <!-- <app-countdown></app-countdown> -->
+      <div class="game" >
+        <canvas id="pong-init" ></canvas>
+        <p class="neonBlue scoreSize winner-score" *ngIf="showWinnerScore">
+          And The Winner Is {{ winner }} <br>
+          {{ winnerScore }} :
+          {{ loserScore }}
+        </p>
+      </div>
+        </div>
+</body>
+
+

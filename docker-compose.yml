@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+
+  back:
+    image: backend
+    container_name: nestjs
+    build: ./backend
+    restart: always
+    depends_on:
+      - postgresql
+    volumes:
+      - /app/node_modules
+      - ./backend:/app
+      - profile:/app/uploads
+    ports:
+      - "3000:3000"
+    env_file: .env
+    networks:
+      - dockerNetwork
+
+  front:
+    image: frontend
+    container_name: angularjs
+    build: ./frontend
+    restart: always
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    networks:
+      - dockerNetwork
+    ports:
+      - 4200:4200
+    
+  postgresql:
+    image: postgres:latest
+    container_name: postgresql
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${PG_USERNAME}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_NAME}
+    restart: always 
+    networks:
+      - dockerNetwork
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - '5050:80'
+
+networks:
+  dockerNetwork :
+    driver: bridge
+
+volumes:
+  profile: 
+    driver: local
+    driver_opts:
+      o: 'bind'
+      type: 'none'
+      device: './SharedImages'

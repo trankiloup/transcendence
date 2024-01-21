@@ -1,0 +1,16 @@
+
+<div class="container">
+      <div  class="top">
+        <div class="col-md account-menu">
+            <button (click)="openUser()" class="btn  bg-black" type="button"  style="border-color: black; color: black; font-size: 3vw">
+              <span class="neonPinkSlow ConnectedSize">Connected People</span>
+            </button>
+          <div class="thePeople" *ngIf="open">
+                <app-user-list  ></app-user-list>
+          </div>
+        </div>
+        <div class="col-md  element">
+          <app-account-menu></app-account-menu>
+        </div>
+      </div>
+    </div>

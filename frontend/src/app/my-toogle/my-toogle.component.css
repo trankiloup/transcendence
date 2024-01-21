@@ -1,0 +1,38 @@
+.toggle-container{
+  position:static;
+}
+.toggle{
+  -webkit-appearance: none;
+  position: fixed;
+  width: 75px;
+  height: 45px;
+  border-radius: 75px;
+  background-color: #2d2c2c;
+  transition: background .3s;
+  outline: none;
+  cursor: pointer;
+}
+.toggle:after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  height:2.37rem;
+  width: 2.37rem;
+  background-color: #ee13e8;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff;
+  transition: left .3s;
+}
+
+.toggle:checked{
+}
+
+.toggle:checked::after{
+  left:70%;
+}

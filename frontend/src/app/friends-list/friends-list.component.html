@@ -1,0 +1,98 @@
+<div class="friends-list-container">
+    <nav class="">
+        <ul class="menu-center">
+            <li class="items" (click)="updateCurrentList(0)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z"/>
+                    <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                  </svg>
+            </li>
+            <li class="items" (click)="updateCurrentList(1)">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z"/>
+                  </svg>
+            </li>
+            <li class="items" (click)="updateCurrentList(2)">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="bi bi-ban" viewBox="0 0 16 16">
+                    <path d="M15 8a6.973 6.973 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8ZM2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Z"/>
+                  </svg>
+            </li>
+        </ul>
+    </nav>
+    <div class="friend">
+        <div *ngIf="currentList == 0" class="name">
+                FRIENDS LIST
+         </div>
+         <div *ngIf="currentList == 1" class="name">
+            FRIENDS REQUESTS
+        </div>
+        <div *ngIf="currentList == 2" class="name">
+            BLOCKED USERS
+        </div>
+        <div *ngFor="let friends of friendsList$ | async">
+            <div *ngIf="currentList == 0">
+                <ul *ngIf="friends.status == relation.FRIEND">
+                <li>
+                    <div class="txt">
+                    {{friends.username}}
+                    </div>
+                    <div class="empty">
+                    </div>
+                <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" (click)="goMatchHistory(friends.username)" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                </div>
+                <div class="icons" (click)="removeRelation(friends.user_id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                      </svg>
+                </div>
+                </li>
+                </ul>
+            </div>
+            <div *ngIf="currentList == 1">
+            <ul *ngIf="friends.status == relation.INVITED">
+                <li>
+                    <div class="txt">
+                    {{friends.username}}
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="icons" (click)="addFriend(friends.user_id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                          </svg>
+                    </div>
+                    <div class="icons" (click)="removeRelation(friends.user_id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-x-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="currentList == 2">
+            <ul *ngIf="friends.status == relation.BLOCKED">
+                <li>
+                    <div class="txt">
+                    {{friends.username}}
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="icons" (click)="deblockUser(friends.user_id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                          </svg>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>

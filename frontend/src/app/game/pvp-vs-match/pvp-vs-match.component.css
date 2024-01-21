@@ -1,0 +1,69 @@
+.header{
+  display: flex;
+}
+.back{
+  margin:auto;
+  font-size: 4vw  ;
+  color: deeppink;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+ .app{
+   flex-grow: 4;
+ }
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  height: 80vh;
+}
+img{
+  max-width: 20vw;
+  background-color: black;
+}
+.pinkBorder{
+  border-left: solid #e612e2;
+  border-left-width: 2px;
+}
+.middle{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+}
+
+.hpSize{
+  font-size: 5vw;
+  text-align: center;
+}
+
+.card-body{
+max-height: 300vw;
+  background-color: black;
+}
+
+.card-text{
+  background-color: black;
+  font-size: 5vw;
+  text-align: center;
+}
+
+.card{
+  background-color: black;
+}
+.card:hover,.ConnectedSize,.back:hover{   border: 1px solid #ff00ff;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff; }
+
+.button{
+  background-color: #00b2ff;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+@media( max-width: 1199px ){
+
+}

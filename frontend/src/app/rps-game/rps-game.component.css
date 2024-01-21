@@ -1,0 +1,103 @@
+.top{display: flex; justify-content: space-between;margin:auto; padding-left: 5%}
+.empty{width: 25%}
+.nPinkSize{text-align: center; font-size: 4vw}
+.middle{display: flex; justify-content: space-around;}
+.rpsGameBox{display: flex; width: 100%; justify-content: space-evenly; align-items: center; flex-wrap: wrap; margin-bottom: 0%;}
+.leftBox{ text-align: center}
+.rightBox{ text-align: center}
+.rpsResultBox{display: flex; width: 100%; justify-content: space-evenly; align-items: center; flex-wrap: wrap; margin-bottom: 0%;}
+
+p{font-size: 3vw; vertical-align: center; margin-top: 5%;}
+
+.dropdown:hover{   border: 1px solid #ff00ff;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff; }
+.card:hover{   border: 1px solid #ff00ff;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff; }
+
+.singleCard{ align-items: center}
+/* .singleCardImg{width:100%;  max-height:px; object-fit: contain} */
+
+  .wrapper
+  {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  img{
+    background-color: black;
+    width: 180px;
+    max-width: 100%;
+    vertical-align: middle;
+   }
+  .hpSize{
+    font-size: 5vw;
+  }
+  .subTitle{
+    font-size: 2.5vw;
+    margin: auto;
+    padding-bottom: 2%;
+  }
+
+  .scoreSize{
+    font-size: 3.5vw;
+    /* padding-bottom: 5%; */
+  }
+.lBox{
+  width:30%;
+}
+.rBox{
+  width:30%;
+}
+
+.middleOther {
+  margin:auto;
+  display:flex;
+  width:35%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+  .winner-score {
+    position: sticky;
+    top: 0;
+    left: center;
+    z-index: 1;
+  }
+
+  /* mettre le bouton playAgain au centre de la page */
+  .play_again {
+    position: sticky;
+  }
+
+  .button{
+    margin:auto;
+    padding-top:5% ;
+  }
+
+  .rulesText {
+    font-size: 5pv;
+    text-align: center;
+    color: #f8b8b8;
+    text-shadow: 0 0 7px #e612db, 0 0 10px #e612e2, 0 0 12px rgb(181, 15, 236),
+    0 0 77px rgb(230, 40, 238), 0 0 100px rgb(253, 158, 218);
+    animation: neonFlickerPinkSlow 5s infinite;
+  }
+
+  .Resulttext {
+    display: flex;
+    flex: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom:1%;
+    font-size: 3vw;
+  }
+

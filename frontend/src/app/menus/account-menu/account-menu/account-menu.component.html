@@ -1,0 +1,12 @@
+<div class="dropdown" id="account">
+  <button class="btn dropdown-toggle bg-black neonGreen" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="flex-basis:auto;border-color: black;  font-size: 3vw">
+    <div class="neonBlue name">{{user}} </div>
+  </button>
+  <ul class="dropdown-menu p-3 mb-2 bg-black text-white item">
+    <li><a class="dropdown-item p-3 mb-2 bg-black text-white" >
+      <div (click)="clickUserProfile()">My Profile</div>
+      <div (click)="scoreHistory()">My Score</div>
+      <div (click)="logout()" >Logout</div>
+    </a></li>
+  </ul>
+</div>

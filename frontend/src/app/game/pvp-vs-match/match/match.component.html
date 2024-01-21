@@ -1,0 +1,102 @@
+<div class="container0">
+  <div class="top">
+    <div class="emptyTop"></div>
+    <div class="neonPinkSlow">Tournament</div>
+    <div class="emptyTop"></div>
+    <div class="neonPinkSlow back" (click)="back()">X</div>
+  </div>
+  <div class="verticalEmpty"></div>
+  <div class="container1">
+    <div class="tournament">
+      <h2 class="neonPinkSlow">Match Pool 1</h2>
+      <div>
+          <span *ngIf="player1 !='' ">
+            <span class="neonBlue" >{{player1}} :  </span> <span class="neonBlue">{{scorePlayer1Part1}}</span>
+          </span>
+        <span *ngIf="player1 =='' ">
+            <span class="neonBlue" > Waiting for player:</span>
+          </span>
+        VS
+        <span *ngIf="player2 !='' ">
+            <span class="neonGreen"*ngIf="player2 != null">{{scorePlayer2Part1}} : </span> <span class="neonGreen">{{player2}}</span>
+          </span>
+        <span *ngIf="player2 =='' ">
+            <span class="neonGreen" > Waiting for player:</span>
+          </span>
+      </div>
+    </div>
+    <div class="empty"></div>
+    <div class="tournament">
+      <h2 class="neonPinkSlow">Match Pool 2</h2>
+      <div>
+          <span *ngIf="player3 !='' ">
+            <span class="neonPinkSlow"*ngIf="player2 != null">{{player3}} : </span> <span class="neonPinkSlow">{{scorePlayer3Part2}}</span>
+          </span>
+        <span *ngIf="player3 =='' ">
+            <span class="neonPinkSlow" > Waiting for player:</span>
+          </span>
+        VS
+        <span *ngIf="player4 !='' ">
+            <span class="neonOrangeSlow"*ngIf="player4 != null">{{scorePlayer4Part2}} : </span> <span class="neonOrangeSlow">{{player4}}</span>
+          </span>
+        <span *ngIf="player4 =='' ">
+            <span class="neonOrangeSlow" > Waiting for player:</span>
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="verticalEmpty">
+    <button (click)="onClick()" [disabled]="disableButton" class="neonPinkSlow">{{buttonText}}</button>
+  </div>
+  <div class="container2">
+    <div class="finale">
+      <h2 class="neonPinkSlow">Finale</h2>
+      <div>
+          <span *ngIf="finisher1 !='' ">
+            <span [ngClass]="getColor(finisher1)" *ngIf="finisher1 != null">{{finisher1}} : </span> <span [ngClass]="getColor(finisher1)" > {{scoreFinaleFinisher1}}</span>
+          </span>
+        <span *ngIf="finisher1 =='' ">
+            <span class="neonGreen" > Not ready Yet:</span>
+          </span>
+        VS
+        <span *ngIf="finisher2 !='' ">
+            <span [ngClass]="getColor(finisher2)" *ngIf="finisher2 != null">{{scoreFinaleFinisher2}} : </span> <span [ngClass]="getColor(finisher2)" class="neonPinkSlow"> {{finisher2}}</span>
+          </span>
+        <span *ngIf="finisher2 =='' ">
+            <span class="neonPinkSlow" > Not ready Yet</span>
+          </span>
+      </div>
+    </div>
+    <div class="empty"></div>
+    <div class="classement">
+      <div>
+        <h2 class="neonPinkSlow" > classement </h2>
+        <div *ngIf="rank1 == ''">
+          <div class="neonPinkSlow">1 Not ready Yet</div>
+        </div>
+        <div *ngIf="rank1 != ''">
+          <div [ngClass]="getColor(rank1)">1 {{rank1}}</div>
+        </div>
+        <div *ngIf="rank2 == ''">
+          <div class="neonPinkSlow">2 Not ready Yet</div>
+        </div>
+        <div *ngIf="rank2 != ''">
+          <div [ngClass]="getColor(rank2)">2 {{rank2}}</div>
+        </div>
+        <div *ngIf="rank3 == ''">
+          <div class="neonPinkSlow">3 Not ready Yet</div>
+        </div>
+        <div *ngIf="rank3 != ''">
+          <div [ngClass]="getColor(rank3)">3 {{rank3}}</div>
+        </div>
+        <div *ngIf="rank4 == ''">
+          <div class="neonPinkSlow">3 Not ready Yet</div>
+        </div>
+        <div *ngIf="rank4 != ''">
+          <div [ngClass]="getColor(rank4)">3 {{rank4}}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

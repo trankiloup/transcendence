@@ -1,0 +1,58 @@
+.body
+{
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: 1960px;
+  max-height: 100%
+}
+
+.middle{
+  display:flex;
+  justify-content: space-evenly;
+  padding-top: 5%;
+}
+
+.flamingoR{
+  transform: scaleX(-1);
+  max-width: 380px;
+}
+picture{
+  text-align: center;
+}
+
+.flamingo{
+  max-width: 380px;
+}
+
+.phoursize{
+  font-size:8vw;
+}
+
+.npinksize{
+  font-size:8vw;
+}
+@media (max-width: 1199px) {
+  .flamingo {
+    display: none;
+  }
+
+  .flamingoR {
+    padding-top: 10%;
+    max-width: 60vw;
+  }
+
+  .middle {
+    margin:0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .neonPink{
+  }
+
+  .phoursize{
+    font-size:10vw;
+  }
+  img {
+    max-width: 39%;
+  }
+}

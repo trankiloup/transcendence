@@ -1,0 +1,22 @@
+.top{display: flex; flex-wrap: wrap; justify-content: space-between}
+.phHeader{font-size:6vw;}
+.ConnectedSize{font-size: 4vw;}
+.btn{text-align: center}
+.nPinkSize{text-align: center; font-size: 8vw}
+.element{margin: auto; text-align: center}
+img{width: 180px}
+
+.btn:hover{   border: 1px solid #ff00ff;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff; }
+
+.back{
+  .neonPink{}
+}
+@media (max-width: 1199px) {
+  .ConnectedSize{font-size: 6vw}
+  .nPinkSize{text-align: center; font-size: 6vw}
+}

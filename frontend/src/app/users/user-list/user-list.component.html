@@ -1,0 +1,47 @@
+
+    <div class="user-list-container">
+        <div class="user-online-title">
+            Users Online
+        </div>
+        <ul class="list-group">
+            <li *ngFor="let user of userList$ | async" (click)="setUser(user.username, user.id)">
+                <a class="list-group-item list-group-item-action">
+                    <div class="d-flex flow-row align-items-center">
+                            <div class="col-md-8 justify-text-end">
+                                <div class="username">
+                                    {{ user.username }}
+                                </div>
+
+                            </div>
+                            <div class="col-md-2 justify-content-end">
+                                <div *ngIf="user.status === 'ONLINE'">
+                                    <i class="bi bi-circle-fill online-color"></i>
+                                </div>
+                                <div *ngIf="user.status === 'INGAME'">
+                                    <i class="bi bi-circle-fill ingame-color"></i>
+                                </div>
+                                <div *ngIf="user.status === 'OFFLINE'">
+                                    <i class="bi bi-circle-fill offline-color"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="dropdown">
+                                    <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical text-white"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" (click)="goMatchHistory()">Profile</a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status === relation.NONE" (click)="addFriend(user.id)" class="dropdown-item">Send friend request</a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status === relation.FRIEND" (click)="removeRelation(user.id)" class="dropdown-item">Remove as a friend</a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status === relation.PENDING" (click)="removeRelation(user.id)" class="dropdown-item">Cancel friend request </a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status === relation.INVITED" (click)="addFriend(user.id)" class="dropdown-item">Accept friend request </a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status !== relation.BLOCKED" (click)="blockUser(user.id)" class="dropdown-item" >Block {{user.username}}</a></li>
+                                        <li *ngIf="user.id !== id"><a *ngIf="status === relation.BLOCKED" (click)="deblockUser(user.id)" class="dropdown-item">Unblock {{user.username}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+            </li>
+        </ul>
+    </div>

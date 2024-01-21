@@ -1,0 +1,30 @@
+#account:hover{ border: 1px solid #00b2ff;
+  box-shadow:
+    0 0 10px #00b2ff,
+    0 0 20px #00b2ff,
+    0 0 30px #00b2ff,
+    0 0 40px #00b2ff; }
+li:hover{
+ border: 1px solid #ffffff;
+  box-shadow:
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #ffffff,
+    0 0 40px #ffffff;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+a{
+  cursor: pointer;
+}
+.name{
+  font-size: 4vw;
+  text-align: center;
+  margin: 0 auto
+}
+@media (max-width: 1199px) {
+  .name{
+    font-size: 6vw;
+  }
+}

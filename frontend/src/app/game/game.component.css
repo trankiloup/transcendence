@@ -1,0 +1,73 @@
+body, html {
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  margin:0 auto;
+  height:80vh;
+}
+
+.wrapper
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+img{
+  background-color: black;
+  max-width: 9vw;
+  border-radius: 100%;
+}
+.hpSize{
+  font-size: 5vw;
+}
+.score{
+  padding: 2%;
+  display:flex;
+  justify-content: space-evenly;
+}
+.game{
+  padding-top: 1%;
+  margin: auto;
+}
+
+img:hover{
+  background-color: #e612e2;
+  border: 1px solid #ff00ff;
+  box-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff
+}
+canvas:hover
+{
+
+  border: 1px solid #63ff00;
+  box-shadow:
+    0 0 10px #63ff00,
+    0 0 20px #63ff00,
+    0 0 30px #63ff00,
+    0 0 40px #63ff00
+}
+
+#pong-init {
+    min-width: 540px;
+    text-align: center;
+    width: 50vw;
+    border: 2px solid #5a5858;
+    border-radius: 20px;
+}
+
+.scoreSize{
+  font-size: 3vw;
+}
+@media (max-width: 1199px) {
+}
+
+.game{
+}
+.winner-score {
+  position: sticky;
+  top: 0;
+  left: center;
+}

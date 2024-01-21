@@ -1,0 +1,139 @@
+body {
+    max-width: 1056px;
+    max-height: 920px;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.padlock{
+    max-width: 250px;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.neonPinkWithoutAnim {
+    border:none;
+    background-color: black;
+    color:white;
+    font-family: "disco";
+    text-shadow: 0 0 7px #e628ee, 0 0 10px #ce3f98, 0 0 42px rgb(181, 15, 236),
+    0 0 77px rgb(230, 18, 219), 0 0 100px rgb(230, 18, 226);
+  }
+
+.code {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: auto;
+    width: 40vw;
+    height: 20vh;
+    border: 2px solid #fdcaea;
+    box-shadow:
+    0 0 6px #d10586,
+    0 0 30px #ee2ca7,
+    0 0 12px #c7368f,
+    0 0 21px #ca5ea1,
+    0 0 34px #cf4d9d,
+    0 0 54px #ce3f98;
+    border-radius: 30px;
+}
+
+.button {
+    margin-top: 30%;
+    max-width: 200px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.valid-button {
+    border : 2px solid #fff;
+    box-shadow: 0 0 7px #1fe4f6, 0 0 10px #1fe4f6, 0 0 12px rgb(31, 228, 246),
+    0 0 77px rgb(31, 228, 246), 0 0 80px rgb(31, 228, 246);
+}
+
+input {
+    width: 25%;
+    height: 19vh;
+    border-radius: 30px;
+    background-color: black;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 15vw;
+    font-family: 'Monoton', cursive;
+    color: #fdcaea;
+    text-shadow:
+    0 0 6px #d10586,
+    0 0 30px #ee2ca7,
+    0 0 12px #c7368f,
+    0 0 21px #ca5ea1,
+    0 0 34px #cf4d9d,
+    0 0 54px #ce3f98;
+}
+
+.img {
+    max-width: 200px;
+}
+
+.neonWhite {
+    border:none;
+    background-color: black;
+    color:white;
+    text-shadow: 0 0 7px #ffffff, 0 0 10px #ffffff;
+    font-size: 7vw;
+    font-style: italic;
+    font-family: 'Monoton'
+  }
+
+  .flexBut{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+.neonBlueAction
+{
+  text-align: center;
+  color: white;
+  background-color: black;
+  border: none;
+  font-size: 7vw;
+  font-family: "neon";
+  text-shadow: 0 0 7px #1fe4f6, 0 0 10px #1fe4f6, 0 0 12px rgb(31, 228, 246),
+  0 0 77px rgb(31, 228, 246), 0 0 100px rgb(31, 228, 246);
+  animation: neonFlickerBlue 3s infinite;
+  padding-left: 10%;
+}
+
+.titlesize2{
+  font-size:5vw;
+}
+
+.titlesize{
+    font-size:7vw;
+  }
+
+@keyframes neonFlickerBlue{
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+

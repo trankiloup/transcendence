@@ -1,0 +1,110 @@
+.friends-list-container{
+    width: 75%;
+    height: 80%;
+    opacity: 0.9;
+    background-color: black;
+    box-sizing: border-box;
+    position: absolute;
+    border: 5px solid #e628ee;
+    border-radius: 30px;
+}
+
+.friends-list-container .menu-center {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 10px;
+  }
+  
+  .friends-list-container .items {
+    max-width: 100px;
+    margin-right: 20px;
+    margin-left: 0;
+    max-height: 70px;
+    max-width: 70px;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    fill: #e36be7;
+    padding-right: 15px;
+    align-content: space-between;
+  }
+
+  .friends-list-container .items:hover {
+    padding-right: 30px;
+    background-color: black;
+  }
+
+    .friend {
+      width : 100%;
+      height: 100%;
+    }
+
+    .friend ul {
+      width: 100%;
+      height: 100%;      
+      overflow-y: scroll;
+
+    }
+    .friend li {
+      display: flex;
+      border: 1px solid #e36be7;
+      border-radius: 20px;
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    .friend li .txt {
+      float: left;
+      font-size: 2vw;
+      color: aliceblue;
+      padding: 10px;
+
+    }
+
+    .friend li .empty{
+      width: 90%;
+    }
+
+    .friend li .icons {
+      fill : aliceblue;
+      width: 40px;
+      cursor: pointer;
+      padding-right: 10px;
+      margin: auto;
+    }
+
+    .friend .name {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      margin: auto;
+      text-align: center;
+      color: #fff;
+      font-family: "retro";
+      text-shadow: 0 0 7px #e628ee, 0 0 10px #ce3f98, 0 0 42px rgb(181, 15, 236),
+      0 0 77px rgb(230, 18, 219), 0 0 100px rgb(230, 18, 226);
+      font-size: 2.2vw;
+      font-weight: bold;
+    }
+
+
+  /* opts scroll bar */
+
+/* Works on Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color:#1fe4f6 #000000;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 20px;
+  border: 3px solid #1fe4f6;
+}
+
+  
